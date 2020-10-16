@@ -28,14 +28,13 @@ describe 'Project' do
   context 'index' do
     it 'successfully' do
       # ARRANGE
-      project = create(:project)
+      project = create_list(:project, 5)
       # ACT
       get project_index_path
       json = JSON.parse(response.body, symbolize_names: true)
       # ASSERT
       expect(response.status).to eq(200)
-      expect(json[0][:name]).to eq(project.name)
-      expect(json[0][:id]).not_to be_nil
+      expect(response.body).to eq(project.to_json)
     end
   end
 
