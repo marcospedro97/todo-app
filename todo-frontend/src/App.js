@@ -16,11 +16,11 @@ function App() {
         <Router className="root">
           <Switch>
            <Route path='/' exact render={() => <IndexProjects />} />
-            <Route path='/project/:id' exact render={() => <ShowProject />}/>
+            <Route path='/project/:id/show' exact render={() => <ShowProject />}/>
             <Route path='/project/:id/edit' exact render={() => <EditProject />}/>
-             <Route path='/project/new' exact render={() => <CreateProject />}/>
-            <Route path='/project/:id/task/new' exact render={() => <CreateTask />}/>
             <Route path='/project/:id/task/:task_id/edit' exact render={() => <EditTask />}/>
+            <Route path='/project/new' exact render={() => <CreateProject />}/>
+            <Route path='/project/:id/task/new' exact render={() => <CreateTask />}/>
           </Switch>
         </Router>
     </Container>
