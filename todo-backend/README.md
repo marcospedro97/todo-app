@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# SETUP
+$ `bin/setup`
 
-Things you may want to cover:
+# TESTS
+$ `rspec`
 
-* Ruby version
+# ROUTES
+## Get projects
+`localhost:3000/project`
 
-* System dependencies
+## Create project
+`localhost:300/project` method post
+  `{ "name":"name of the project" }`
 
-* Configuration
+## Show project
+`localhost:300/project/:id` method get
 
-* Database creation
+## Update project
+`localhost:300/project/:id` method put
+  `{ "name":"name of the project" }`
+  
+## Delete 
+`localhost:3000/project/:id` method delete
 
-* Database initialization
+## Create task
+`localhost:3000/project/:project_id/task` method post
+`{ "name": "some cool task", "description": "some cool task" }`
 
-* How to run the test suite
+## Update task
+`localhost:3000/project/:project_id/task/:id` method put
+`{ "name": "some cool task", "description": "some cool task" }`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Delete task
+`localhost:3000/project/:project_id/task/:id` method delete
 
-* Deployment instructions
-
-* ...
+## Show task
+`localhost:3000/project/:project_id/task/:id` method get
